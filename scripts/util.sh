@@ -7,3 +7,8 @@ function preview(){
 	rake generate
 	rake preview)
 }
+
+function new_post(){
+	(cd build
+	rake "new_post[$1]")
+}
