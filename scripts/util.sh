@@ -12,3 +12,8 @@ function new_post(){
 	(cd build
 	rake "new_post[$1]")
 }
+
+function deploy(){
+	(cd build
+	rake deploy)
+}
