@@ -3,7 +3,7 @@ layout: post
 title: "available for work"
 date: 2014-04-12 00:29
 comments: true
-categories: 
+categories: me
 ---
 
 I'm Jesus Gollonet, a software developer with 10 years of experience. I'm based in Amsterdam but I can travel and work remotely. Since April 2014 I'm available for contract work as a freelancer.
