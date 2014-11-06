@@ -4,16 +4,16 @@ echo "loading scripts for software over the rainbow"
 
 function preview(){
 	(cd build
-	rake generate
-	rake preview)
+	bundle exec rake generate
+	bundle exec rake preview)
 }
 
 function new_post(){
 	(cd build
-	rake "new_post[$1]")
+	bundle exec rake "new_post[$1]")
 }
 
 function deploy(){
 	(cd build
-	rake deploy)
+	bundle exec rake deploy)
 }
