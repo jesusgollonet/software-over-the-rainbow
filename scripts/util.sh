@@ -2,18 +2,25 @@
 
 echo "loading scripts for software over the rainbow"
 
-function preview(){
-	(cd build
-	bundle exec rake generate
-	bundle exec rake preview)
+tmux_session="jgb_blog"
+
+preview_in_tmux(){
+    create_tmux_session_if_not_exists $tmux_session && 
+    tmux send -t $tmux_session:0 '. scripts/util.sh && preview' Enter
 }
 
-function new_post(){
-	(cd build
-	bundle exec rake "new_post[$1]")
+preview(){
+    (cd build
+    bundle exec rake generate
+    bundle exec rake preview)
 }
 
-function deploy(){
-	(cd build
-	bundle exec rake deploy)
+new_post(){
+    (cd build
+    bundle exec rake "new_post[$1]")
+}
+
+deploy(){
+    (cd build
+    bundle exec rake deploy)
 }
