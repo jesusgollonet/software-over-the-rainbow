@@ -24,3 +24,8 @@ deploy(){
     (cd build
     bundle exec rake deploy)
 }
+
+recent_posts(){
+    ls build/source/_posts | tail -n 10
+}
+
