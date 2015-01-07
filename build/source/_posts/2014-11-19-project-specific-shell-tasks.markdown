@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "project specific shell tasks"
+title: "project specific dotfiles"
 date: 2014-11-19 19:29
 comments: true
 published: false
 categories: 
 ---
-**tl,dr**: In my projects, I use a shell file with a few functions to automate tasks in a context-specific way.
-I’ve found that it eases project switching (specially if you work with different stacks), and it serves as a small DSL and pseudo-documentation for the project.
+
+I've been using a project-specific shell file with functions to automate tasks in my projects. This file serves as a small DSL and pseudo-documentation. I've found that being able to invoke tasks in the language of the project reduces cognitive friction, and greatly eases project switching, more so if you work with different stacks.
 
 <!-- More -->
 
