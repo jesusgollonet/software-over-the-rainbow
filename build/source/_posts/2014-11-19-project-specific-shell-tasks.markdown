@@ -7,13 +7,31 @@ published: false
 categories: 
 ---
 
-I've been using a project-specific shell file with functions to automate tasks in my projects. This file serves as a small DSL and pseudo-documentation. I've found that being able to invoke tasks in the language of the project reduces cognitive friction, and greatly eases project switching, more so if you work with different stacks.
+I've been using a project-specific shell file with functions to automate tasks in my projects. In addition to saving time, This file serves as a small DSL and pseudo-documentation. I've found that being able to invoke tasks in the language of the project reduces cognitive friction, and greatly eases project switching, more so if you work with different stacks.
 
 <!-- More -->
 
-When working on a project there are often a bunch of tasks I run over and over (uploading files, restarting servers, running preprocessors, compass watch…), maybe a few directories I spend time on and so on. I'm used to using dotfiles to create shortcuts for frequent tasks and locations but those are global and I don’t want to pollute my global config files with information which only makes sense in the context of a specific project.
+When working on a project there are often a bunch of tasks I run over and over (uploading files, restarting servers, running preprocessors, testing on a device or an emulator, compass watch…). Some of them are just one command, some might require a few steps and even multiple tools.
 
-I’ve been searching for a project specific way to do the same thing dotfiles accomplish. I've been playing with a couple of arrangements and I've settled now on a very simple setup:
+In general when programming, if there is a sequence of steps that can be referred to as one thing, that sounds like a function, and you should be able to invoke it by name. Taking this blog as an example, if I want to deploy it, I'd like to just write:
+
+```bash
+$ deploy
+```
+
+or preview locally: 
+
+```bash
+$ preview
+```
+
+or create a new post 
+
+```bash
+$ new_post "project specific dotfiles"
+```
+
+This can be easily accomplished with bash functions. Here's the setup I'm using:
 
 In the root of my project I'll have a shell script with a list of functions that wrap the commands I have to run. Here's an example from this blog
 
@@ -42,24 +60,6 @@ function deploy(){
 [https://github.com/jesusgollonet/software-over-the-rainbow/blob/master/scripts/util.sh](https://github.com/jesusgollonet/software-over-the-rainbow/blob/master/scripts/util.sh)
 
 When I start working on a project I'll source this file: `source scripts/util.sh` (I actually use the alias `pslu` -project specific load utils- ) and that will make each of this tasks available as a command invoked with the function name from the command line.
-
-So If I want to deploy I'll write
-
-```bash
-$ deploy
-```
-
-or get a list of posts
-
-```bash
-$ list_posts
-```
-
-or create a new post 
-
-```bash
-$ new_post "project specific dotfiles"
-```
 
 ## Some properties I like:
 Despite the simplicity of the approach, this system has a few nice properties I'm enjoying:
