@@ -15,13 +15,19 @@ do_watch(){
     bundle exec rake preview)
 }
 
+kill_watch(){
+    tmux send -t $tmux_session:0 C-c
+}
+
 new_post(){
     (cd build
     bundle exec rake "new_post[$1]")
 }
 
 deploy(){
+    kill_watch &&
     (cd build
+    bundle exec rake generate
     bundle exec rake deploy)
 }
 
