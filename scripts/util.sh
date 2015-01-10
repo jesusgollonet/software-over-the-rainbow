@@ -4,12 +4,12 @@ echo "loading scripts for software over the rainbow"
 
 tmux_session="jgb_blog"
 
-preview_in_tmux(){
+watch(){
     create_tmux_session_if_not_exists $tmux_session && 
-    tmux send -t $tmux_session:0 '. scripts/util.sh && preview' Enter
+    tmux send -t $tmux_session:0 '. scripts/util.sh && do_watch' Enter
 }
 
-preview(){
+do_watch(){
     (cd build
     bundle exec rake generate
     bundle exec rake preview)
