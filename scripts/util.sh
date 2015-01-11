@@ -10,9 +10,13 @@ watch(){
 }
 
 do_watch(){
+    # note the use of 2 paralell subshells (we don't care about output being mixed)
+    (wait_for_server
+    open http://localhost:4000) &
     (cd build
     bundle exec rake generate
-    bundle exec rake preview)
+    bundle exec rake preview
+    ) 
 }
 
 kill_watch(){
@@ -35,3 +39,11 @@ recent_posts(){
     ls build/source/_posts | tail -n 10
 }
 
+wait_for_server(){
+    while true; do
+        lsof -i :4000 > /dev/null
+        if [[ $?  == 0 ]]; then
+            break
+        fi
+    done
+}
