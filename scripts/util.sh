@@ -47,3 +47,5 @@ wait_for_server(){
         fi
     done
 }
+
+watch
