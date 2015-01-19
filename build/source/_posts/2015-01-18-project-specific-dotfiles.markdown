@@ -7,13 +7,15 @@ published: false
 categories: 
 ---
 
-I've been using a project-specific shell file with functions to invoke tasks in my projects. In addition to saving time, this file serves as a map and sort of documentation for the project.
+I've been using a project-specific shell file with functions to invoke tasks in my projects. In addition to saving time, this file ends up serving as a map and documentation of sorts, which reduces friction when switching between projects.
 
 <!-- More -->
 
 When working on a project there are often a bunch of tasks I run over and over (uploading files, restarting servers, running preprocessors, testing on a device or an emulator, compass watch…). Some of them are just one command, some might require a few steps and maybe multiple tools.
 
-Generally speaking in programming, if there is an action that can be referred to as one thing, it should be a function, and you should be able to invoke it by name. Taking this blog as an example, if I want to deploy it, I'd like to just write:
+Generally speaking in programming, if there is an action that can be referred to as one thing, it should be a function, and you should be able to invoke it by name.
+
+Taking this blog as an example, if I want to deploy it, I'd like to just write:
 
 ```bash
 $ deploy
@@ -65,7 +67,9 @@ function deploy(){
 
 When I start working on a project I'll source this file: `source scripts/util.sh` and that will make each of this tasks available as a command invoked with the function name from the command line.
 
-Looking at that example, you can think I'm doing little more than wrapping the rake commands, which is true in this case, but this approach starts to pay off when you often switch stacks. I work as a freelancer and in the last 3 months I've worked on a couple of backbone apps, a composition with supercollider, a phonegap app, some node.js utilities... When switching between those there's always some or a lot of friction. I forget what build tool or db engine I was using, wether the server is integrated in grunt or where and how the project needed to be deployed and a thousand other things. There is nothing fun or interesting about finding that out so I'm very happy to remove that frustration.
+In this example, I'm doing little more than wrapping the rake commands, which might seem a bit silly. But this approach starts to pay off when you often switch stacks. I work as a freelancer and in the last 3 months I've worked on a couple of backbone apps, a composition with supercollider, a phonegap app, some node.js utilities... When switching between those there's always some or a lot of friction. I forget what build tool or db engine I was using, wether the server is integrated in grunt or where and how the project needed to be deployed and a thousand other things. There is nothing fun or interesting about finding that out so I'm very happy to remove that frustration.
+
+Here are a few other examples from other projects: [1](https://github.com/jesusgollonet/resume.jesusgollonet.com/blob/master/scripts/util.sh), [2](https://github.com/jesusgollonet/freelance-utils/blob/master/scripts/util.sh),[3](https://github.com/jesusgollonet/filete/blob/master/sh/filete.sh)
 
 ## Some properties I like:
 
@@ -93,3 +97,4 @@ Most of the projects I work on already use some sort of task runner (grunt, rake
 
 So it has a few quirks, but I started using this system a few months ago and currently I don't spend more than a couple of hours working on any project new or old before I start populating this file. 
 
+I'd be happy to hear about similar approaches or just any feedback on this one, so don't hesitate to get in touch on twitter [@jesusgollonet](http://twitter.com/jesusgollonet)
