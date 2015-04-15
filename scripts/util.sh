@@ -4,7 +4,7 @@ echo "loading scripts for software over the rainbow"
 
 tmux_session="jgb_blog"
 
-watch(){
+activate(){
     create_tmux_session_if_not_exists $tmux_session && 
     tmux send -t $tmux_session:0 '. scripts/util.sh && do_watch' Enter
 }
@@ -47,5 +47,3 @@ wait_for_server(){
         fi
     done
 }
-
-watch
