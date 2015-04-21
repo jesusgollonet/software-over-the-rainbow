@@ -10,7 +10,7 @@ If `this` is undefined inside your arrow functions, keep reading.
 
 <!-- More -->
 
-I've been using es6 through [htt://babeljs.io](babel.js) in a side project, mainly because after a short affaire with haskell, I wanted arrow functions.
+I've been using es6 through [babel.js](http://babeljs.io) in a side project, mainly because after a short affaire with haskell, I wanted arrow functions.
 
 One of the big features of arrow functions is that they are lexically scoped, which in short means that `this` is tied to the scope in which they were created, which means no more explicit binding of the scope for events or fugly `var self = this`'s.
 
