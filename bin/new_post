@@ -1,0 +1,10 @@
+#!/bin/bash
+
+main(){
+    local post_name
+    post_name=$1
+    (cd build
+    bundle exec rake "new_post[$post_name]")
+}
+
+main "$1"
