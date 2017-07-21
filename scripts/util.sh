@@ -20,7 +20,7 @@ do_watch(){
 }
 
 kill_watch(){
-    tmux send -t $tmux_session:0 C-c
+    tmux send -t $tmux_session:1 C-c
 }
 
 new_post(){
