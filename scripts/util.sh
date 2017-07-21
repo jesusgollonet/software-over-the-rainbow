@@ -6,7 +6,7 @@ tmux_session="jgb_blog"
 
 activate(){
     create_tmux_session_if_not_exists $tmux_session && 
-    tmux send -t $tmux_session:0 '. scripts/util.sh && do_watch' Enter
+    tmux send -t $tmux_session:1 '. scripts/util.sh && do_watch' Enter
 }
 
 do_watch(){
