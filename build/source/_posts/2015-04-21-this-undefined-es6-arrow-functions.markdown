@@ -3,7 +3,10 @@ layout: post
 title: "this undefined in es6 arrow functions"
 date: 2015-04-21 09:44
 comments: true
-categories: javascript, es6, babeljs
+categories: 
+  - javascript
+  - es6
+  - babeljs
 ---
 
 If `this` is undefined inside your arrow functions, keep reading.

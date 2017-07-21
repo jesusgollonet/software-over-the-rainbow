@@ -4,7 +4,9 @@ title: "project specific dotfiles"
 date: 2015-01-18 20:29
 comments: true
 published: true
-categories: personal computing, programming
+categories:
+  - personal computing
+  - programming
 ---
 
 I've been using a project-specific shell file with functions to invoke tasks in my projects. In addition to saving time, this file ends up serving as a map and documentation of sorts, which reduces friction when switching between projects.
